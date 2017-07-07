@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/jetkara/Scenes/Game.unity
+- path: Assets/jetkara/Scenes/MainMenu.unity
   isLoaded: 1
   isActive: 1

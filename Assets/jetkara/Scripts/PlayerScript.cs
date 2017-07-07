@@ -1,27 +1,49 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
+using Leap;
 
 public class PlayerScript : MonoBehaviour
 {
 	bool dead;
 	public AudioClip[] auClip;
 	public GameObject fire;
+	Controller LeapController;
 
 	void Start()
 	{
 		dead = false;
 		GetComponent<AudioSource>().clip = auClip[0];
+		LeapController = new Controller ();
 	}
 
 	void Update()
 	{
-		if (Ardunity.MappingInput._analogValue > 0.3f && !dead)
-		{
-			RaycastHit2D hit = Physics2D.Raycast (Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+		Frame frame = LeapController.Frame ();
+		if (frame.Hands.Count > 0) {
+			List<Hand> hands = frame.Hands;
+			Hand hand = hands [0];
+
+			if (hand.GrabStrength > 0.8f && !dead) {
+				RaycastHit2D hit = Physics2D.Raycast (Camera.main.ScreenToWorldPoint (Input.mousePosition), Vector2.zero);
 			
-			if(hit.collider == null)
-			{
-				Jump();
+				if (hit.collider == null) {
+					Jump ();
+				}
+			}
+		}
+		if (Input.GetMouseButton(0) || Input.GetMouseButton(1) && !dead) {
+			RaycastHit2D hit = Physics2D.Raycast (Camera.main.ScreenToWorldPoint (Input.mousePosition), Vector2.zero);
+
+			if (hit.collider == null) {
+				Jump ();
+			}
+		}
+		if (Ardunity.MappingInput._analogValue > 0.3f && !dead){
+			RaycastHit2D hit = Physics2D.Raycast (Camera.main.ScreenToWorldPoint (Input.mousePosition), Vector2.zero);
+
+			if (hit.collider == null) {
+				Jump ();
 			}
 		}
 	}
