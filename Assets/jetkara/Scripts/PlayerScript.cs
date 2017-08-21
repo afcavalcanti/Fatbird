@@ -33,7 +33,7 @@ public class PlayerScript : MonoBehaviour
 					}
 				}
 			}
-			if (Input.GetMouseButton(0) && !dead) {
+			if (Input.GetMouseButton(0) || Input.GetKeyDown(KeyCode.W) && !dead) {
 				RaycastHit2D hit = Physics2D.Raycast (Camera.main.ScreenToWorldPoint (Input.mousePosition), Vector2.zero);
 
 				if (hit.collider == null) {
@@ -52,7 +52,7 @@ public class PlayerScript : MonoBehaviour
 			Frame frame = LeapController.Frame ();
 			if (frame.Hands.Count > 0) {
 				List<Hand> hands = frame.Hands;
-				Hand secondHand = hands [0];
+				Hand secondHand = hands [1];
 
 				if (secondHand.GrabStrength > 0.8f && !dead) {
 					RaycastHit2D hit = Physics2D.Raycast (Camera.main.ScreenToWorldPoint (Input.mousePosition), Vector2.zero);
@@ -62,7 +62,7 @@ public class PlayerScript : MonoBehaviour
 					}
 				}
 			}
-			if (Input.GetMouseButton(1) && !dead) {
+			if (Input.GetMouseButton(1) || Input.GetKeyDown(KeyCode.UpArrow) && !dead) {
 				RaycastHit2D hit = Physics2D.Raycast (Camera.main.ScreenToWorldPoint (Input.mousePosition), Vector2.zero);
 
 				if (hit.collider == null) {

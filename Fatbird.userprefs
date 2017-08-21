@@ -2,9 +2,9 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\jetkara\Scripts\PlayerScript.cs">
     <Files>
-      <File FileName="Assets\jetkara\Scripts\PlayerScript.cs" Line="65" Column="8" />
+      <File FileName="Assets\jetkara\Scripts\PlayerScript.cs" Line="65" Column="69" />
       <File FileName="Assets\jetkara\Scripts\ObjectMove.cs" Line="1" Column="1" />
-      <File FileName="Assets\jetkara\Scripts\GameManager.cs" Line="32" Column="61" />
+      <File FileName="Assets\jetkara\Scripts\GameManager.cs" Line="1" Column="1" />
       <File FileName="Assets\jetkara\Scripts\SetScore.cs" Line="1" Column="1" />
       <File FileName="Assets\jetkara\Scripts\BackAndroid.cs" Line="1" Column="1" />
       <File FileName="Assets\jetkara\Scripts\CameraAspect.cs" Line="1" Column="1" />
