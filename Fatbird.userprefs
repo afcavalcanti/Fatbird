@@ -1,9 +1,15 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\jetkara\Scripts\PlayerScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\jetkara\Scripts\GameManager.cs">
     <Files>
-      <File FileName="Assets\ARDUnity\Scripts\Bridge\MappingInput.cs" Line="1" Column="1" />
-      <File FileName="Assets\jetkara\Scripts\PlayerScript.cs" Line="31" Column="14" />
+      <File FileName="Assets\jetkara\Scripts\PlayerScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\jetkara\Scripts\ObjectMove.cs" Line="1" Column="1" />
+      <File FileName="Assets\jetkara\Scripts\GameManager.cs" Line="32" Column="61" />
+      <File FileName="Assets\jetkara\Scripts\SetScore.cs" Line="1" Column="1" />
+      <File FileName="Assets\jetkara\Scripts\BackAndroid.cs" Line="1" Column="1" />
+      <File FileName="Assets\jetkara\Scripts\CameraAspect.cs" Line="1" Column="1" />
+      <File FileName="Assets\jetkara\Scripts\Fire.cs" Line="1" Column="1" />
+      <File FileName="Assets\jetkara\Scripts\OpenLevel.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

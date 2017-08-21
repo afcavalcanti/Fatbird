@@ -29,6 +29,6 @@ public class GameManager : MonoBehaviour
 
 	void CreateObjects()
 	{
-		Instantiate(objects, new Vector3(7.5f, Random.Range(-2f, 2.1f) , 0) , Quaternion.identity);
+		Instantiate(objects, new Vector3(7.5f, Random.Range(-3f, 3f) , 0) , Quaternion.identity);
 	}
 }
