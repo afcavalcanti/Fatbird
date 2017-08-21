@@ -33,7 +33,7 @@ public class PlayerScript : MonoBehaviour
 					}
 				}
 			}
-			if (Input.GetMouseButton(0) || Input.GetKeyDown(KeyCode.W) && !dead) {
+			if (Input.GetMouseButton(0) || Input.GetKey(KeyCode.W) && !dead) {
 				RaycastHit2D hit = Physics2D.Raycast (Camera.main.ScreenToWorldPoint (Input.mousePosition), Vector2.zero);
 
 				if (hit.collider == null) {
@@ -62,7 +62,7 @@ public class PlayerScript : MonoBehaviour
 					}
 				}
 			}
-			if (Input.GetMouseButton(1) || Input.GetKeyDown(KeyCode.UpArrow) && !dead) {
+			if (Input.GetMouseButton(1) || Input.GetKey(KeyCode.UpArrow) && !dead) {
 				RaycastHit2D hit = Physics2D.Raycast (Camera.main.ScreenToWorldPoint (Input.mousePosition), Vector2.zero);
 
 				if (hit.collider == null) {
