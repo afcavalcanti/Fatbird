@@ -19,31 +19,62 @@ public class PlayerScript : MonoBehaviour
 
 	void Update()
 	{
-		Frame frame = LeapController.Frame ();
-		if (frame.Hands.Count > 0) {
-			List<Hand> hands = frame.Hands;
-			Hand hand = hands [0];
+		if(gameObject.tag == "Player1"){
+			Frame frame = LeapController.Frame ();
+			if (frame.Hands.Count > 0) {
+				List<Hand> hands = frame.Hands;
+				Hand firstHand = hands [0];
 
-			if (hand.GrabStrength > 0.8f && !dead) {
-				RaycastHit2D hit = Physics2D.Raycast (Camera.main.ScreenToWorldPoint (Input.mousePosition), Vector2.zero);
+				if (firstHand.GrabStrength > 0.8f && !dead) {
+					RaycastHit2D hit = Physics2D.Raycast (Camera.main.ScreenToWorldPoint (Input.mousePosition), Vector2.zero);
 			
+					if (hit.collider == null) {
+						Jump ();
+					}
+				}
+			}
+			if (Input.GetMouseButton(0) && !dead) {
+				RaycastHit2D hit = Physics2D.Raycast (Camera.main.ScreenToWorldPoint (Input.mousePosition), Vector2.zero);
+
+				if (hit.collider == null) {
+					Jump ();
+				}
+			}
+			if (Ardunity.MappingInput._analogValue > 0.3f && !dead){
+				RaycastHit2D hit = Physics2D.Raycast (Camera.main.ScreenToWorldPoint (Input.mousePosition), Vector2.zero);
+
 				if (hit.collider == null) {
 					Jump ();
 				}
 			}
 		}
-		if (Input.GetMouseButton(0) || Input.GetMouseButton(1) && !dead) {
-			RaycastHit2D hit = Physics2D.Raycast (Camera.main.ScreenToWorldPoint (Input.mousePosition), Vector2.zero);
+		if(gameObject.tag == "Player2"){
+			Frame frame = LeapController.Frame ();
+			if (frame.Hands.Count > 0) {
+				List<Hand> hands = frame.Hands;
+				Hand secondHand = hands [0];
 
-			if (hit.collider == null) {
-				Jump ();
+				if (secondHand.GrabStrength > 0.8f && !dead) {
+					RaycastHit2D hit = Physics2D.Raycast (Camera.main.ScreenToWorldPoint (Input.mousePosition), Vector2.zero);
+
+					if (hit.collider == null) {
+						Jump ();
+					}
+				}
 			}
-		}
-		if (Ardunity.MappingInput._analogValue > 0.3f && !dead){
-			RaycastHit2D hit = Physics2D.Raycast (Camera.main.ScreenToWorldPoint (Input.mousePosition), Vector2.zero);
+			if (Input.GetMouseButton(1) && !dead) {
+				RaycastHit2D hit = Physics2D.Raycast (Camera.main.ScreenToWorldPoint (Input.mousePosition), Vector2.zero);
 
-			if (hit.collider == null) {
-				Jump ();
+				if (hit.collider == null) {
+					Jump ();
+				}
+			}
+			if (Ardunity.MappingInput._analogValue > 0.3f && !dead){
+				RaycastHit2D hit = Physics2D.Raycast (Camera.main.ScreenToWorldPoint (Input.mousePosition), Vector2.zero);
+
+				if (hit.collider == null) {
+					Jump ();
+				}
 			}
 		}
 	}
